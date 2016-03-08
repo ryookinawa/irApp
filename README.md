@@ -1,6 +1,6 @@
 # ir-app
 
-このプロジェクトはすでに存在するfirstAppで作ったリモコンアプリをAngular Full-Stackで作った環境に移植する。合わせてAngularを使ったアプリ作成を勉強する。
+このプロジェクトはすでに存在するfirstAppで作ったリモコンアプリをAngular Full-Stackで作った環境に移植する。合わせてAngularを使ったアプリ作成を勉強する。。
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.3.0.
 
