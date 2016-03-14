@@ -12,11 +12,14 @@
 import _ from 'lodash';
 import Thing from './thing.model';
 
-function respondWithResult(res, statusCode) {
-  statusCode = statusCode || 200;
+//function respondWithResult(res, statusCode) {
+function respondWithResult(res,statusCode) {
+  //statusCode = statusCode || 300;
+  statusCode = 200;
   return function(entity) {
     if (entity) {
       res.status(statusCode).json(entity);
+      //res.status(statusCode);
     }
   };
 }
