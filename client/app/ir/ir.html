@@ -1,4 +1,3 @@
-<h2>IRコード登録</h2>
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>Remote Control</h1>
@@ -6,6 +5,17 @@
   </div>
 </header>
 <li class="list-item"><a ui-sref="main">Home</a></li>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Data Base</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in main.awesomeThings">
+        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)">&times;</button></a></li>
+      </ul>
+    </div>
+  </div>
+
 <!--
 <ul>
   <li ng-repeat="ir in irs">
