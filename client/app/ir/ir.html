@@ -4,22 +4,50 @@
     <p class="lead">Remote Control for Smart Home</p>
   </div>
 </header>
-<li class="list-item"><a ui-sref="main">Home</a></li>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Data Base</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in main.awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)">&times;</button></a></li>
-      </ul>
+<tabset>
+    <tab heading="DB">
+      <h1 class="page-header">IRCode Data Base</h1>
+       <div  class="container">
+        <div class="table-responsive">
+        <table class="table">
+          <thead>
+             <tr>
+               <th>No</th>
+               <th>Floor</th>
+               <th>Place</th>
+               <th>Button</th>
+               <th>Code</th>
+               <th>Group</th>
+               </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="ir in irs">
+             <td>{{ir._id}}</td>
+             <td>{{ir.floor}}</td>
+             <td>{{ir.place}}</td>
+             <td>{{ir.button}}</td>
+             <td>{{ir.code}}</td>
+             <td>{{ir.group}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </tab>
+    <tab heading="REG">
+      <form class="ir-form">
+        <label>Register IR Code</label>
+        <p class="input-group">
+          // TODO: コントローラにメソッドの作成
+          <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary" ng-click="main.addThing()">Add New</button>
+          </span>
+        </p>
+      </form>
     </div>
-  </div>
+    <li class="list-item"><a ui-sref="ir">Home</a></li>
 
-<!--
-<ul>
-  <li ng-repeat="ir in irs">
-    {{ir.name}}
-  </li>
-</ul>
--->
+    </tab>
+</tabset>

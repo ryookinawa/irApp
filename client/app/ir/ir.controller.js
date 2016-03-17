@@ -6,12 +6,11 @@ class IrController {
 
   constructor($http, $scope, socket) {
     this.$http = $http;
-    this.awesomeThings = [];
+    $scope.irs = [];
 
-    $http.get('/api/irs').then(response => {
-      this.awesomeThings = response.data;
-      console.log(response.data);
-      socket.syncUpdates('thing', this.awesomeThings);
+    $http.get('/api/v1/irs').then(response => {
+      $scope.irs = response.data;
+      socket.syncUpdates('ir', $scope.irs);
     });
 
     $scope.$on('$destroy', function() {
